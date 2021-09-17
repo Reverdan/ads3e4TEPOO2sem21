@@ -22,8 +22,8 @@
                 android:id="@+id/txvNumero1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Primeiro número"
-                android:textSize="20dp" />
+                android:text="@string/primeiro_numero"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/edtNumero1"
@@ -38,8 +38,8 @@
                 android:id="@+id/txvNumero2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Segundo número"
-                android:textSize="20dp" />
+                android:text="@string/segundo_numero"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/edtNumero2"
@@ -120,7 +120,7 @@
                 android:id="@+id/txvResultado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Resultado"
+                android:text="@string/resultado"
                 android:textSize="28dp" />
         </LinearLayout>
 

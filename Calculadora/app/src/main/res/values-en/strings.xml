@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="primeiro_numero">First Number</string>
+    <string name="segundo_numero">Second Number</string>
+    <string name="resultado">Result</string>
+</resources>
