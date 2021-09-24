@@ -4,4 +4,6 @@
     <string name="primeiro_numero">First Number</string>
     <string name="segundo_numero">Second Number</string>
     <string name="resultado">Result</string>
+    <string name="numero_invalido">"Insert valid numbers"</string>
+    <string name="divisao_zero">"Division by zero"</string>
 </resources>

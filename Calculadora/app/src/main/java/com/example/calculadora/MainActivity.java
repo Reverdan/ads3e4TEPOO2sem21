@@ -2,11 +2,15 @@ package com.example.calculadora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Application;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.calculadora.modelo.Controle;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -39,6 +43,19 @@ public class MainActivity extends AppCompatActivity
         txvResultado = findViewById(R.id.txvResultado);
     }
 
+    public void enviarControle(String op)
+    {
+        Controle controle = new Controle(edtNumero1.getText().toString(),
+                edtNumero2.getText().toString(), op, getApplicationContext());
+        if (controle.getMensagem().equals("")) txvResultado.setText(controle.toString());
+        else
+        {
+            Toast.makeText(getApplicationContext(), controle.getMensagem(),
+                    Toast.LENGTH_LONG).show();
+            txvResultado.setText("");
+        }
+    }
+
     public void eventos()
     {
         btnSomar.setOnClickListener(new View.OnClickListener()
@@ -46,7 +63,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-
+                enviarControle("+");
             }
         });
 
@@ -55,7 +72,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-
+                enviarControle("-");
             }
         });
 
@@ -64,7 +81,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-
+                enviarControle("*");
             }
         });
 
@@ -73,7 +90,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-
+                enviarControle("/");
             }
         });
     }

@@ -3,4 +3,6 @@
     <string name="primeiro_numero">Primeiro número</string>
     <string name="segundo_numero">Segundo número</string>
     <string name="resultado">Resultado</string>
+    <string name="numero_invalido">"Digite números válidos"</string>
+    <string name="divisao_zero">"Divisão por zero"</string>
 </resources>
