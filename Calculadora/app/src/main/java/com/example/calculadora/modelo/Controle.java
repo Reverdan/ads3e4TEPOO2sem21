@@ -9,22 +9,22 @@ public class Controle
     private String op;
     private String mensagem;
     private String result;
-    private Context context;
+    private Context contexto;
 
-    public Controle(String num1, String num2, String op, Context context)
+    public Controle(String num1, String num2, String op, Context contexto)
     {
         this.num1 = num1;
         this.num2 = num2;
         this.op = op;
-        this.context = context;
+        this.contexto = contexto;
         this.executar();
     }
 
     private void executar()
     {
         this.mensagem = "";
-        Validacao validacao = new Validacao();
-        validacao.validar(this.num1, this.num2, this.op, context);
+        Validacao validacao = new Validacao(contexto);
+        validacao.validar(this.num1, this.num2, this.op);
         if (validacao.getMensagem().equals(""))
         {
             Calculos calculos = new Calculos(validacao.getN1(),

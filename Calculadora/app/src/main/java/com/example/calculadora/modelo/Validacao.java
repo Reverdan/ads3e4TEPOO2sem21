@@ -10,13 +10,17 @@ public class Validacao
     private Double n2;
     private String mensagem;
     private String op;
-    private Context context;
+    private Context contexto;
 
-    public void validar(String num1, String num2, String op, Context context)
+    public Validacao(Context contexto)
+    {
+        this.contexto = contexto;
+    }
+
+    public void validar(String num1, String num2, String op)
     {
         this.mensagem = "";
         this.op = op;
-        this.context = context;
         try
         {
             this.n1 = Double.parseDouble(num1);
@@ -25,8 +29,7 @@ public class Validacao
         }
         catch (NumberFormatException e)
         {
-//            this.mensagem = "Digite valores válidos";
-            this.mensagem = context.getString(R.string.numero_invalido);
+            this.mensagem = contexto.getString(R.string.numero_invalido);
         }
     }
 
@@ -34,8 +37,7 @@ public class Validacao
     {
         if (op.equals("/") && this.n2.equals(0.0))
         {
-//            this.mensagem = "Divisão por 0";
-            this.mensagem = context.getString(R.string.divisao_zero);
+            this.mensagem = contexto.getString(R.string.divisao_zero);
         }
     }
 

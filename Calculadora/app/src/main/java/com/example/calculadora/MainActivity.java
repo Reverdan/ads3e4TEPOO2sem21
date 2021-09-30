@@ -3,6 +3,7 @@ package com.example.calculadora;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Application;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity
     Button btnMultiplicar;
     Button btnDividir;
     TextView txvResultado;
+    Context contexto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,12 +43,13 @@ public class MainActivity extends AppCompatActivity
         btnMultiplicar = findViewById(R.id.btnMultiplicar);
         btnDividir = findViewById(R.id.btnDividir);
         txvResultado = findViewById(R.id.txvResultado);
+        contexto = getApplicationContext();
     }
 
     public void enviarControle(String op)
     {
         Controle controle = new Controle(edtNumero1.getText().toString(),
-                edtNumero2.getText().toString(), op, getApplicationContext());
+                edtNumero2.getText().toString(), op, contexto);
         if (controle.getMensagem().equals("")) txvResultado.setText(controle.toString());
         else
         {
