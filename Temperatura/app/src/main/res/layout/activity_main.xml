@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txvValor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginBottom="10sp"
+            android:text="Valor" />
+
+        <EditText
+            android:id="@+id/edtValorTemperatura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25sp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:minHeight="48dp"
+            android:textSize="18sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_marginBottom="25sp"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdbCelsiusFahrenheit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:textSize="18sp"
+                android:text="Celsius - Fahrenheit" />
+
+            <RadioButton
+                android:id="@+id/rdbFahrenheitCelsius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Fahrenheit - Celsius" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnConverter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:textSize="18sp"
+            android:text="Converter" />
+
+        <TextView
+            android:id="@+id/txvResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Resultado" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
