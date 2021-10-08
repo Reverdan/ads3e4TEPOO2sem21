@@ -6,15 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".apresentacao.actPrimo">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Primo"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txvPrimoMensagem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
+            android:text="Digite um número Inteiro"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/txtPrimoNumero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:textSize="30sp"
+            android:layout_marginBottom="20sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/btnPrimoCalcular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30sp"
+            android:text="Verificar se é Primo" />
+
+        <TextView
+            android:id="@+id/txvPrimoResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Resultado" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
