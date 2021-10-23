@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class banco extends SQLiteOpenHelper
+public class Banco extends SQLiteOpenHelper
 {
-    public banco(Context contexto)
+    public Banco(Context contexto)
     {
         super(contexto, "CrudPessoas.db", null, 1);
     }
