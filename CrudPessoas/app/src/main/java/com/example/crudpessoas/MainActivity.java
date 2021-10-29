@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import com.example.crudpessoas.apresentacao.mnaCadastro;
+import com.example.crudpessoas.apresentacao.mnaPesquisarEditarExcluir;
 
 public class MainActivity extends AppCompatActivity
 {
     Button btnPrincipalCadastrar;
+    Button btnPrincipalPEE;
     Intent intCadastrar;
+    Intent intPEE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,7 +28,9 @@ public class MainActivity extends AppCompatActivity
     private void inicializarComponentes()
     {
         btnPrincipalCadastrar = findViewById(R.id.btnPrincipalCadastrar);
+        btnPrincipalPEE = findViewById(R.id.btnPrincipalPEE);
         intCadastrar = new Intent(getApplicationContext(), mnaCadastro.class);
+        intPEE = new Intent(getApplicationContext(), mnaPesquisarEditarExcluir.class);
     }
 
     private void eventos()
@@ -36,6 +41,15 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 startActivity(intCadastrar);
+            }
+        });
+
+        btnPrincipalPEE.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                startActivity(intPEE);
             }
         });
     }

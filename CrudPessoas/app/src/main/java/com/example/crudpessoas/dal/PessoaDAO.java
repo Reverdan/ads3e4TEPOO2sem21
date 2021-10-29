@@ -2,6 +2,7 @@ package com.example.crudpessoas.dal;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.crudpessoas.modelo.Pessoa;
@@ -38,6 +39,22 @@ public class PessoaDAO
             this.mensagem = "Erro no BD";
 //            this.mensagem = e.getMessage();
         }
+    }
+
+    public Pessoa pesquisarPessoaPorId(Pessoa pessoa)
+    {
+        Banco banco = new Banco(this.contexto);
+        SQLiteDatabase sqlite = banco.getReadableDatabase();
+        Cursor cursor = sqlite.rawQuery("select * from pessoas where id = ?",
+                new String[]{String.valueOf(pessoa.getId())});
+        if (cursor.getCount() > 0)
+        {
+            cursor.moveToFirst();
+            pessoa.setNome(cursor.getString(1));
+            pessoa.setRg(cursor.getString(2));
+            pessoa.setCpf(cursor.getString(3));
+        }
+        return pessoa;
     }
 
     public String getMensagem()

@@ -20,6 +20,19 @@ public class Validacao
             this.mensagem += "CPF com mais de 15 caracteres \n";
     }
 
+    public void validarId(String stringId)
+    {
+        this.mensagem = "";
+        try
+        {
+            this.id = Integer.parseInt(stringId);
+        }
+        catch (NumberFormatException e)
+        {
+            this.mensagem = "ID inválido";
+        }
+    }
+
     public String getMensagem()
     {
         return mensagem;

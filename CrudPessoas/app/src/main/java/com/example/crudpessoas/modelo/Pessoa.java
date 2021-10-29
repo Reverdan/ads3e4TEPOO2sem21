@@ -7,6 +7,11 @@ public class Pessoa
     private String rg;
     private String cpf;
 
+    public Pessoa()
+    {
+
+    }
+
     public Pessoa(Integer id, String nome, String rg, String cpf)
     {
         this.id = id;

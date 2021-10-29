@@ -37,6 +37,25 @@ public class Controle
         }
     }
 
+    public Pessoa pesquisarPessoaPorId(String id)
+    {
+        this.mensagem = "";
+        Pessoa pessoa = new Pessoa();
+        Validacao validacao = new Validacao();
+        validacao.validarId(id);
+        if (validacao.getMensagem().equals(""))
+        {
+            pessoa.setId(validacao.getId());
+            PessoaDAO pessoaDAO = new PessoaDAO(contexto);
+            pessoa = pessoaDAO.pesquisarPessoaPorId(pessoa);
+        }
+        else
+        {
+            this.mensagem = validacao.getMensagem();
+        }
+        return pessoa;
+    }
+
     public String getMensagem()
     {
         return mensagem;
